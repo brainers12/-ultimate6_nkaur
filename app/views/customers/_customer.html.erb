@@ -1,0 +1,18 @@
+
+
+<div class="customer-card">
+  <h3><%= customer.full_name %></h3>
+  <% if customer.email_address.present? %>
+    <p>Email: <%= customer.email_address %></p>
+  <% else %>
+    <p>Email: Not Provided</p>
+  <% end %>
+  <p>Phone: <%= customer.phone_number.presence || "Not Provided" %></p>
+  <p>Notes: <%= customer.notes.presence || "Not Available" %></p>
+  <% if customer.image.attached? %>
+    <%= image_tag(customer.image.variant(resize_to_fill: [100, 100]), alt: "#{customer.full_name}'s photo") %>
+  <% else %>
+    <%= image_tag('placeholder-image.png', alt: "No photo available") %>
+  <% end %>
+</div>
+
