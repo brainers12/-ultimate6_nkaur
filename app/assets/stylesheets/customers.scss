@@ -1,12 +1,38 @@
+/* app/assets/stylesheets/customers.scss */
 
 .customer-card {
-  border: 1px solid #ddd;
-  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* This will space out the picture and the info */
+  align-items: center; /* This will vertically align items if they have different heights */
+  border: 1px solid #eaeaea;
+  padding: 20px;
   margin-bottom: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.customer-card h3 {
-  margin-top: 0;
+.customer-info {
+  flex-grow: 1;
+  margin-right: 20px; /* Add some space between the info and the picture */
+
+  h3 {
+    color: #333;
+    font-size: 1.25rem;
+  }
+
+  p {
+    color: #666;
+    margin: 5px 0;
+    font-size: 1rem;
+  }
 }
+
+.customer-image {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  border-radius: 50%;
+  width: 100px; /* Adjust width as needed */
+  height: 100px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures the image covers the area */
+}
+
